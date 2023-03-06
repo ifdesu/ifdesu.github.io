@@ -1,95 +1,121 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jogo Simples</title>
+    <title>Desenhando uma imagem e adicionando um background fixo</title>
     <style>
-      #canvas {
-        border: 1px solid black;
+      body {
+        background-image: url(background.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+      }
+
+      .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+      
+      p {
+        font-size: 48px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: white;
+        text-align: left;
+        padding-left: 20px;
+      }
+      
+      .intro {
+        font-size: 20px;
+        word-wrap: break-word;
+      }
+      
+      .button {
+        display: inline-block;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        overflow: hidden;
+      }
+      
+      .button-y {
+        background-color: red;
+      }
+      
+      .button-b {
+        background-color: blue;
+      }
+      
+      .button-g {
+        background-color: green;
+      }
+      
+      .button-y a, .button-b a, .button-g a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        color: black;
+        font-size: 24px;
+      }
+      
+      .button-y a {
+        background-image: url(youtube.jpg);
+        background-size: cover;
+        border-radius: 50%;
+      }
+      
+      .button-b a {
+        background-image: url(instagram.jpg);
+        background-size: cover;
+        border-radius: 50%;
+      }
+      
+      .button-g a {
+        background-image: url(github.jpg);
+        background-size: cover;
+        border-radius: 50%;
       }
     </style>
   </head>
   <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
-    <script>
-      var canvas = document.getElementById("canvas");
-      var ctx = canvas.getContext("2d");
-      var x = canvas.width / 2;
-      var y = canvas.height - 30;
-      var ballRadius = 10;
-      var dx = 2;
-      var dy = -2;
-      var paddleHeight = 10;
-      var paddleWidth = 75;
-      var paddleX = (canvas.width - paddleWidth) / 2;
-      var rightPressed = false;
-      var leftPressed = false;
-
-      document.addEventListener("keydown", keyDownHandler, false);
-      document.addEventListener("keyup", keyUpHandler, false);
-
-      function keyDownHandler(e) {
-        if (e.keyCode == 39) {
-          rightPressed = true;
-        } else if (e.keyCode == 37) {
-          leftPressed = true;
-        }
-      }
-
-      function keyUpHandler(e) {
-        if (e.keyCode == 39) {
-          rightPressed = false;
-        } else if (e.keyCode == 37) {
-          leftPressed = false;
-        }
-      }
-
-      function drawBall() {
-        ctx.beginPath();
-        ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = "red";
-        ctx.fill();
-        ctx.closePath();
-      }
-
-      function drawPaddle() {
-        ctx.beginPath();
-        ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = "blue";
-        ctx.fill();
-        ctx.closePath();
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawBall();
-        drawPaddle();
-
-        if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-          dx = -dx;
-        }
-
-        if (y + dy < ballRadius) {
-          dy = -dy;
-        } else if (y + dy > canvas.height - ballRadius) {
-          if (x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
-          } else {
-            <!-- alert("Game Over"); -->
-            document.location.reload();
-          }
-        }
-
-        if (rightPressed && paddleX < canvas.width - paddleWidth) {
-          paddleX += 7;
-        } else if (leftPressed && paddleX > 0) {
-          paddleX -= 7;
-        }
-
-        x += dx;
-        y += dy;
-      }
-
-      setInterval(draw, 10);
-    </script>
+    <div class="content">
+      <img src="little_desu.jpg" alt="descrição da imagem">
+      <div>
+        <p>Welcome</p>
+        <p class="intro">Hii! You can call me if_desu ;p<br>
+           I'm a brazilian artist and I love drawing,<br>
+           compose musics and Programming<br>
+           since I was just a desu haha<br>
+           I really enjoy all that,<br>
+           so let me draw your OC pleease <3</p>
+        <div>
+          <div class="button button-y">
+            <a href="https://www.youtube.com/@if_desu" target="_blank"></a>
+          </div>
+          <div class="button button-b">
+            <a href="https://www.instagram.com/if_desu" target="_blank"></a>
+          </div>
+          <div class="button button-g">
+            <a href="https://github.com/ifdesu" target="_blank"></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
