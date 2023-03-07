@@ -1,0 +1,17 @@
+crie um htmp com o seguinte:
+
+var numero = 1,
+
+var girando = false,
+
+background que nao se mova mesmo com scroll com a imagem background.png,
+
+um canvas de de 300 x 400,
+
+dentro do canvas a imagem d0.png preenchendo tudo dentro do canvas,
+
+faça um evento se eu clicar o canvas a variavel girando faça switch,
+
+faça um loop que se a variavel girando for verdadeira a variavel numero faça random de 1 ate 6
+
+e por fim faça um loop que se numero = 1 desenhar d1.png, se numero = 2 desenhar d2.png, se numero = 3 desenhar d3.png, se numero = 4 desenhar d4.png, se numero = 5 desenhar d5.png, se numero = 6 desenhar d6.png, 
