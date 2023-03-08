@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desenhando uma imagem e adicionando um background fixo</title>
+    <style>
+      body {
+        background-image: url(image/background.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+      }
+
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+      
+      p {
+        font-size: 48px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: white;
+        text-align: left;
+        padding-left: 20px;
+      }
+      
+      .intro {
+        font-size: 20px;
+        word-wrap: break-word;
+      }
+      
+      .button {
+        display: inline-block;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        overflow: hidden;
+      }
+      
+      .button-y {
+        background-color: red;
+      }
+      
+      .button-b {
+        background-color: blue;
+      }
+      
+      .button-g {
+        background-color: green;
+      }
+      
+      .button-y a, .button-b a, .button-g a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        color: black;
+        font-size: 24px;
+      }
+      
+      .button-y a {
+        background-image: url(image/youtube.jpg);
+        background-size: cover;
+        border-radius: 50%;
+      }
+      
+      .button-b a {
+        background-image: url(image/instagram.jpg);
+        background-size: cover;
+        border-radius: 50%;
+      }
+      
+      .button-g a {
+        background-image: url(image/github.jpg);
+        background-size: cover;
+        border-radius: 50%;
+      }
+
+ .button-dice {
+        background-image: url(image/dice.jpg);
+        background-size: cover;
+        border-radius: 50%;
+      }
+      
+      .button-dice a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+      }
+	  .button-primitive {
+        background-image: url(image/primitive.jpg);
+        background-size: cover;
+        border-radius: 50%;
+      }
+      
+      .button-primitive a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+      }
+.button-sketchfab {
+        background-image: url(image/sketchfab.jpg);
+        background-size: cover;
+        border-radius: 50%;
+      }
+      
+      .button-sketchfab a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="image/little_desu.jpg" alt="descrição da imagem">
+    <p>Welcome</p>
+    <p class="intro">Hii! You can call me if_desu ;p<br>
+    I'm a brazilian artist and I love drawing,<br>
+    compose musics and Programming<br>
+    since I was just a desu haha<br>
+    I really enjoy all that,<br>
+    so let me draw your OC pleease <3</p>
+	<p>Social Media</p>
+    <div class="button button-y">	<a href="https://www.youtube.com/@if_desu"></a>	</div>
+    <div class="button button-b">	<a href="https://www.instagram.com/if_desu"></a>	</div>
+    <div class="button button-g">	<a href="https://github.com/ifdesu"></a>	</div>
+	<div class="button button-sketchfab">	<a href="https://sketchfab.com/bergifdesu"></a>	</div>
+	<p>Portifolio</p>
+	<div class="button button-dice">	<a href="dice.html">	</a>	</div>
+	<div class="button button-primitive">	<a href="primitive.html">	</a>	</div>
+	
+  </body>
+</html>
