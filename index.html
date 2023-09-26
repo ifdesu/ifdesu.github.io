@@ -1,178 +1,417 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Desenhando uma imagem e adicionando um background fixo</title>
-    <style>
-      body {
-        background-image: url(image/background.jpg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        margin: 0;
-        padding: 0;
-      }
-
-      img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 20px;
-      }
-      
-      p {
-        font-size: 48px;
-        font-weight: bold;
-        margin-top: 10px;
-        color: white;
-        text-align: left;
-        padding-left: 20px;
-      }
-      
-      .intro {
-        font-size: 20px;
-        word-wrap: break-word;
-      }
-      
-      .button {
-        display: inline-block;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
-        overflow: hidden;
-      }
-      
-      .button-y {
-        background-color: red;
-      }
-      
-      .button-b {
-        background-color: blue;
-      }
-      
-      .button-g {
-        background-color: green;
-      }
-      
-      .button-y a, .button-b a, .button-g a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-        color: black;
-        font-size: 24px;
-      }
-      
-      .button-y a {
-        background-image: url(image/youtube.jpg);
-        background-size: cover;
-        border-radius: 50%;
-      }
-      
-      .button-b a {
-        background-image: url(image/instagram.jpg);
-        background-size: cover;
-        border-radius: 50%;
-      }
-      
-      .button-g a {
-        background-image: url(image/github.jpg);
-        background-size: cover;
-        border-radius: 50%;
-      }
-
- .button-dice {
-        background-image: url(image/dice.jpg);
-        background-size: cover;
-        border-radius: 50%;
-      }
-      
-      .button-dice a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-      }
-	  .button-primitive {
-        background-image: url(image/primitive.jpg);
-        background-size: cover;
-        border-radius: 50%;
-      }
-      
-      .button-primitive a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-      }
-	  
-	  
-	  .button-nagato {
-        background-image: url(image/nagato.jpg);
-        background-size: cover;
-        border-radius: 50%;
-      }
-      
-      .button-nagato a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-      }
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-.button-sketchfab {
-        background-image: url(image/sketchfab.jpg);
-        background-size: cover;
-        border-radius: 50%;
-      }
-      
-      .button-sketchfab a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <img src="image/little_desu.jpg" alt="descrição da imagem">
-    <p>Welcome</p>
-    <p class="intro">Hii! You can call me if_desu ;p<br>
-    I'm a brazilian artist and I love drawing,<br>
-    compose musics and Programming<br>
-    since I was just a desu haha<br>
-    I really enjoy all that,<br>
-    so let me draw your OC pleease <3</p>
-	<p>Portifolio</p>
-	<div class="button button-dice">	<a href="dice.html">	</a>	</div>
-	<div class="button button-primitive">	<a href="primitive.html">	</a>	</div>
-	<div class="button button-nagato">	<a href="nagato.html">	</a>	</div>
+<head>
+</head>
+<body>
+    <script>
 	
-	<p>Social Media</p>
-    <div class="button button-y">	<a href="https://www.youtube.com/@if_desu"></a>	</div>
-    <div class="button button-b">	<a href="https://www.instagram.com/if_desu"></a>	</div>
-    <div class="button button-g">	<a href="https://github.com/ifdesu"></a>	</div>
-	<div class="button button-sketchfab">	<a href="https://sketchfab.com/bergifdesu"></a>	</div>
-  </body>
+const W = window.innerWidth  || document.documentElement.clientWidth  || document.body.clientWidth;
+const H = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+const ROOT = document.body;
+  
+const ATK_SHIP 			= 0;
+const ATK_HELICOPTER 		= 1;
+const ATK_FIRE 			= 2;
+  
+const BORDER_2 		= 0;
+const BORDER_4 		= 1;
+const BORDER_6 		= 2;
+const BORDER_8 		= 3;
+  
+const SCALE_PIXEL 		= 0;
+const SCALE_PERCENT 	= 1;
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'a' || event.key === 'A') {
+			
+            }
+        });
+		
+		function open_site_on_click_new_page(element, url) {
+  // Adicione um ouvinte de evento de clique ao elemento
+  element.element.addEventListener('click', function() {
+    // Abra a URL no novo guia ou janela
+    window.open(url, '_blank');
+  });
+}
+
+function open_site_on_click_same_page(element, url) {
+  // Adicione um ouvinte de evento de clique ao elemento
+  element.element.addEventListener('click', function() {
+    // Redirecione para o novo URL na mesma aba
+    window.location.href = url;
+  });
+}
+
+		
+		function log_xtwh(element) {
+    console.log("Left:", element.element.style.left);
+    console.log("Top:", element.element.style.top);
+    console.log("Width:", element.element.style.width);
+    console.log("Height:", element.element.style.height);
+} 
+		
+		function get_x(element){return parseFloat(element.element.style.left);}
+		function get_y(element){return parseFloat(element.element.style.top);}
+		function get_w(element){return parseFloat(element.element.style.width);}
+		function get_h(element){return parseFloat(element.element.style.height);}
+		
+		function set_x(element, x) {element.element.style.left = x + 'px';}
+		function set_y(element, y) {element.element.style.top = y + 'px';}
+		function set_w(element, w) {element.element.style.width = w + 'px';}
+		function set_h(element, h) {element.element.style.height = h + 'px';}
+		
+		function set_x_to_right_pan(me, to, pan)
+		{
+			set_xywh_cpy( me, to );
+			set_x( me, get_x( me) + get_w( me ) + pan);
+		}
+		
+		function set_xywh(element, x,y,w,h)
+		{
+			element.element.style.left           = x + 'px';
+			element.element.style.top            = y + 'px';
+			element.element.style.width 	      = w + 'px';
+			element.element.style.height         = h + 'px';
+		}
+		
+		function set_xy(element, x,y)
+		{
+			element.element.style.left           = x + 'px';
+			element.element.style.top            = y + 'px';
+		}
+		
+		function set_xywh_cpy(me, to)
+		{
+			me.element.style.left   = to.element.style.left;
+			me.element.style.top    = to.element.style.top;
+			me.element.style.width  = to.element.style.width;
+			me.element.style.height = to.element.style.height;
+		}
+		
+		
+		
+		function set_movible_by_mouse(element) {
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  element.element.style.cursor = 'grab';
+
+  element.element.addEventListener('mousedown', mouseDownHandler);
+  element.element.addEventListener('mouseup', mouseUpHandler);
+
+  function mouseDownHandler(e) {
+    isDragging = true;
+    offsetX = e.clientX - element.element.getBoundingClientRect().left;
+    offsetY = e.clientY - element.element.getBoundingClientRect().top;
+    element.element.style.cursor = 'grabbing';
+
+    document.addEventListener('mousemove', mouseMoveHandler);
+  }
+
+  function mouseMoveHandler(e) {
+    if (isDragging) {
+      const x = e.clientX - offsetX;
+      const y = e.clientY - offsetY;
+      element.element.style.left = x + 'px';
+      element.element.style.top = y + 'px';
+    }
+  }
+
+  function mouseUpHandler() {
+    isDragging = false;
+    element.element.style.cursor = 'grab';
+
+    document.removeEventListener('mousemove', mouseMoveHandler);
+  }
+}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+class UI_text {
+  constructor(text,color,font_size_16) {
+    this.element                       = document.createElement('p');
+    this.element.textContent           = text;
+    this.element.style.position        = 'absolute';
+    this.element.style.left            = '0px';
+    this.element.style.top             = '0px';
+    this.element.style.fontSize        = font_size_16 + 'px';
+    this.element.style.color           = color;
+	ROOT.appendChild(this.element);
+  }
+}
+
+class UI_frame {
+  constructor(color) {
+  this.element                      = document.createElement('div');
+	this.element.style.position       = 'absolute';
+	this.element.style.left           = '100px';
+	this.element.style.top            = '100px';
+	this.element.style.width          = '100px';
+	this.element.style.height         = '100px';
+	this.element.style.border         = '2px solid '+ color;
+	ROOT.appendChild(this.element);
+  }
+}
+
+class UI_rect {
+  constructor(color) {
+  this.element                           = document.createElement('div');
+	this.element.style.position            = 'absolute';
+	this.element.style.backgroundColor     = color;
+	ROOT.appendChild(this.element);
+  }
+}
+
+class UI_image {
+  constructor(src) {
+    this.element 							= document.createElement('img');
+    this.element.src 						= src;
+    this.element.style.position 			= 'absolute';
+    this.element.style.left 				= '100px';
+    this.element.style.top 					= '100px';
+    this.element.style.width 				= '100px';
+    this.element.style.height 				= '100px';
+	ROOT.appendChild(this.element);
+  }
+}
+
+class UI_circularImage {
+  constructor(src) {
+    this.element = document.createElement('img');
+    this.element.src = src;
+    this.element.style.position = 'absolute';
+    this.element.style.left = '100px';
+    this.element.style.top = '100px';
+    this.element.style.width = '100px';
+    this.element.style.height = '100px';
+    this.element.style.borderRadius = '50%'; // Define o raio para fazer a imagem circular
+    this.element.style.clipPath = 'circle(50% at 50% 50%)'; // Define uma máscara de corte circular (opcional)
+    ROOT.appendChild(this.element);
+  }
+}
+
+class UI_roundedImage {
+  constructor(src) {
+    this.element = document.createElement('img');
+    this.element.src = src;
+    this.element.style.position = 'absolute';
+    this.element.style.left = '100px';
+    this.element.style.top = '100px';
+    this.element.style.width = '100px';
+    this.element.style.height = '100px';
+    this.element.style.borderRadius = '10px'; // Define o raio para fazer as quatro quinas arredondadas
+    ROOT.appendChild(this.element);
+  }
+}
+
+class UI_video {
+  constructor(src) {
+    this.element = document.createElement('video');
+    this.element.src = src;
+    this.element.style.position = 'absolute';
+    this.element.style.left = '100px';
+    this.element.style.top = '100px';
+    this.element.style.width = '320px';
+    this.element.style.height = '240px';
+    this.element.controls = true; // Adicione controles de reprodução (play, pause, etc.)
+    ROOT.appendChild(this.element);
+  }
+}
+
+class UI_div {
+  constructor() {
+    this.element                      = document.createElement('div');
+  	this.element.style.position       = 'absolute';
+    ROOT.appendChild(this.element);
+  }
+}
+
+class UI_book {
+  constructor(src) {
+    this.element = document.createElement('iframe');
+    this.element.style.position = 'absolute';
+    this.element.src = src;
+    this.element.setAttribute('allowfullscreen', '');
+    ROOT.appendChild(this.element);
+  }
+}
+
+class UI_backgroundImage {
+  constructor(src) {
+    // Crie um elemento div para representar o contêiner do fundo.
+    this.element = document.createElement('div');
+    this.element.style.position = 'fixed'; // Fixa a posição do contêiner
+    this.element.style.top = '0';
+    this.element.style.left = '0';
+    this.element.style.width = '100%';
+    this.element.style.height = '100%';
+    this.element.style.backgroundImage = `url(${src})`;
+    this.element.style.backgroundSize = 'cover'; // Ajuste o tamanho da imagem para cobrir todo o contêiner
+    this.element.style.backgroundPosition = 'center'; // Centralize a imagem no contêiner
+    this.element.style.zIndex = '-1'; // Coloque o contêiner no plano de fundo
+    document.body.appendChild(this.element);
+  }
+}
+
+class Antarctica {
+  constructor(color, x, y, w, h) {
+    this.element 						                = document.createElement('div');
+    this.element.style.position 		        = 'absolute';
+    this.element.style.left 			          = x + 'px';
+    this.element.style.top 				          = y + 'px';
+    this.element.style.width 			          = w + 'px';
+    this.element.style.height 		        	= h + 'px';
+  	this.element.style.border 			        = '2px solid '+ color;
+  	//this.element.style.backgroundColor      = 'rgb(20, 20, 50)';
+    ROOT.appendChild(this.element);
+  }
+  setXYWH( x, y, w, h ) {
+  	this.element.style.left 			= x + 'px';
+    this.element.style.top 				= y + 'px';
+  	this.element.style.width 			= w + 'px';
+    this.element.style.height 		= h + 'px';
+  }
+  
+  make_war( atk, n, border, value, scale)
+	{
+		var actual_x = parseInt( this.element.style.left   );
+		var actual_y = parseInt( this.element.style.top    );
+		var actual_w = parseInt( this.element.style.width  );
+		var actual_h = parseInt( this.element.style.height );
+		
+		var cut = value;
+		
+		// adjust scale
+		if (scale == SCALE_PERCENT)
+		{
+		  // check horizontal or vertical
+		  if (border == BORDER_4 || border == BORDER_6)
+		  {
+		    /*trans.w = 100%
+		     ??   = value*/
+		    cut = value * actual_w / 100;
+		  }
+		  else
+		  {
+		    cut = value * actual_h / 100;
+		  }
+		}
+		
+		// update n trans
+		if (atk == ATK_SHIP || atk == ATK_HELICOPTER)
+		{
+		  if (border == BORDER_2)
+		  {
+		    n.element.style.left = actual_x + "px";
+		    n.element.style.top = actual_y + "px";
+		    n.element.style.width = actual_w + "px";
+		    n.element.style.height = cut + "px";
+		  }
+		  else if (border == BORDER_4)
+		  {
+		    n.element.style.left = actual_x + "px";
+		    n.element.style.top = actual_y + "px";
+		    n.element.style.width = cut + "px";
+		    n.element.style.height = actual_h + "px";
+		  }
+		  else if (border == BORDER_6)
+		  {
+		    n.element.style.left = ( actual_x + actual_w - cut ) + "px";
+		    n.element.style.top = actual_y + "px";
+		    n.element.style.width = cut + "px";
+		    n.element.style.height = actual_h + "px";
+		  }
+		  else if (border == BORDER_8)
+		  {
+		    n.element.style.left = actual_x + "px";
+		    n.element.style.top = ( actual_y + actual_h - cut ) + "px";
+		    n.element.style.width = actual_w + "px";
+		    n.element.style.height = cut + "px";
+		  }
+		}
+    
+		// cut antarctica
+		if (atk == ATK_SHIP || atk == ATK_FIRE)
+		{
+		  if (border == BORDER_2)
+		  {
+		    this.element.style.top = actual_y + cut + 'px';
+		    this.element.style.height = actual_h - cut + 'px';
+		  }
+		  else if (border == BORDER_4)
+		  {
+		    this.element.style.left = ( actual_x + cut ) + 'px';
+		    this.element.style.width = ( actual_w - cut ) + 'px';
+		  }
+		  else if (border == BORDER_6)
+		  {
+		    this.element.style.width = ( actual_w - cut ) + 'px';
+		  }
+		  else if (border == BORDER_8)
+		  {
+		    this.element.style.height = actual_h - cut + 'px';
+		  }
+		}
+		
+	}
+	
+}
+
+
+// new
+//const antarctica = new Antarctica('blue', 0,0,W,H);
+//const book = new UI_book('https://vdocuments.mx/embed/v1/cla-malkavian');
+const back = new UI_backgroundImage('image/background.jpg');
+const desu = new UI_circularImage('image/little_desu.jpg');
+const wellcome = new UI_text('Bem Vindos !', 'rgb(255,255,255)', W/10);
+const dice = new UI_roundedImage('image/dice.jpg');
+const primitive = new UI_roundedImage('image/primitive.jpg');
+const nagato = new UI_roundedImage('image/nagato.jpg');
+
+const youtube = new UI_roundedImage('image/youtube.jpg');
+const instagram = new UI_roundedImage('image/instagram.jpg');
+const github = new UI_roundedImage('image/github.jpg');
+const sketchfab = new UI_roundedImage('image/sketchfab.jpg');
+
+// transform
+set_xywh( desu, W/20, W/20,W/3,W/3);
+
+set_xywh( wellcome, W/2.5	,-(W/16),W/1.8,100);
+
+set_xywh( dice, W/2.5, W/7,W/8.15,W/11);
+
+set_xywh( youtube, W/2.5, W/7,W/11,W/11);
+set_y( youtube, get_y( youtube) + get_h( youtube ) + W/200);
+
+set_x_to_right_pan( primitive, dice, W/200);
+set_x_to_right_pan( nagato, primitive, W/200);
+set_x_to_right_pan( instagram, youtube, W/200);
+set_x_to_right_pan( github, instagram, W/200);
+set_x_to_right_pan( sketchfab, github, W/200);
+
+// listeners
+open_site_on_click_same_page( youtube , 'https://www.youtube.com/@if_desu');
+open_site_on_click_same_page( instagram , 'https://www.instagram.com/if_desu');
+open_site_on_click_same_page( github , 'https://github.com/ifdesu');
+open_site_on_click_same_page( sketchfab , 'https://sketchfab.com/bergifdesu');
+
+open_site_on_click_same_page( dice , 'dice.html');
+open_site_on_click_same_page( primitive , 'primitive.html');
+open_site_on_click_same_page( nagato , 'nagato.html');
+    </script>
+</body>
 </html>
