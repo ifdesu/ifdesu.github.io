@@ -484,7 +484,7 @@ const desu = new UI_circularImage('image/little_desu.jpg');
 const wellcome = new UI_text('Bem Vindos !', 'rgb(255,255,255)', W/10);
 const dice = new UI_roundedImage('image/dice.jpg');
 const primitive = new UI_roundedImage('image/primitive.jpg');
-const nagato = new UI_roundedImage('image/nagato.jpg');
+// const nagato = new UI_roundedImage('image/nagato.jpg');
 
 const observadora = new UI_text('[ A observadora ]', 'rgb(255,255,255)', W/10);
 const observadora_text = new UI_text(textoCompleto, 'rgb(255,144,0)', W/20);
@@ -509,7 +509,7 @@ set_xywh( youtube, W/2.5, W/7,W/11,W/11);
 set_y( youtube, get_y( youtube) + get_h( youtube ) + W/200);
 
 set_x_to_right_pan( primitive, dice, W/200);
-set_x_to_right_pan( nagato, primitive, W/200);
+//set_x_to_right_pan( nagato, primitive, W/200);
 set_x_to_right_pan( instagram, youtube, W/200);
 set_x_to_right_pan( github, instagram, W/200);
 set_x_to_right_pan( sketchfab, github, W/200);
@@ -525,14 +525,14 @@ text = psiconauta_text;
 set_xy(text, W/30	, get_y( title ) + ( title.element.offsetHeight * 2) );
 
 // listeners
-open_site_on_click_same_page( youtube , 'https://www.youtube.com/@if_desu');
+open_site_on_click_same_page( youtube , 'https://www.youtube.com/@guru_desu');
 open_site_on_click_same_page( instagram , 'https://www.instagram.com/if_desu');
 open_site_on_click_same_page( github , 'https://github.com/ifdesu');
 open_site_on_click_same_page( sketchfab , 'https://sketchfab.com/bergifdesu');
 
 open_site_on_click_same_page( dice , 'dice.html');
 open_site_on_click_same_page( primitive , 'primitive.html');
-open_site_on_click_same_page( nagato , 'nagato.html');
+// open_site_on_click_same_page( nagato , 'nagato.html');
     </script>
 </body>
 </html>
